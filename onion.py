@@ -48,7 +48,6 @@ if __name__ == "__main__":
 
     # Alice encrypts her dest ip with the last session key (the exit node's)
     encrypted_message = alice.encrypt_string(dest_ip_addr, exit_node_public_key)
-    #encrypted_message += 'goto node2'
     # and puts on the other layers of encryption...
     message_to_node2 = alice.encrypt_string(encrypted_message, tor_node2_public_key)
     message_to_node1 = alice.encrypt_string(message_to_node2, tor_node1_public_key)
